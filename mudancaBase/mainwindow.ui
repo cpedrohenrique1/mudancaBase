@@ -6,28 +6,83 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>459</width>
-    <height>349</height>
+    <width>436</width>
+    <height>350</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QComboBox" name="InputBase">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>120</y>
-      <width>79</width>
-      <height>23</height>
+      <x>100</x>
+      <y>50</y>
+      <width>258</width>
+      <height>257</height>
      </rect>
     </property>
-    <item>
-     <property name="text">
-      <string>2</string>
-     </property>
-    </item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Inserir numero&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="InputNumero"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Base&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="InputBase">
+           <item>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>8</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>16</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ExecutarConversao">
+       <property name="text">
+        <string>Converter</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="ImprimirResultado"/>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -35,7 +90,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>459</width>
+     <width>436</width>
      <height>20</height>
     </rect>
    </property>

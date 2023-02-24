@@ -12,7 +12,9 @@ namespace Pedro{
     public:
         Pilha();
         Pilha(int tamanho);
+        ~Pilha();
         bool pilhaVazia()const;
+        void empilhar(int);
     };
 }
 
