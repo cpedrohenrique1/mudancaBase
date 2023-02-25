@@ -25,6 +25,10 @@ bool Pilha::pilhaVazia()const{
     return (topo==-1);
 }
 
+bool Pilha::pilhaCheia()const{
+    return (topo == tamanho-1);
+}
+
 Pilha::~Pilha(){
     if (vet){
         delete[] vet;
@@ -33,8 +37,18 @@ Pilha::~Pilha(){
 }
 
 void Pilha::empilhar(int valor){
-    if (valor < tamanho){
+    if (topo < tamanho){
         topo++;
         vet[topo] = valor;
+    }else{
+        throw QString("Topo maior que o tamanho do vetor");
     }
+}
+
+int Pilha::desempilhar(){
+    return vet[topo--];
+}
+
+int Pilha::getTopo()const{
+    return topo;
 }

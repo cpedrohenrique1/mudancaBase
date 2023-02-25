@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include "mudarbase.h"
+#include <QMessageBox>
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -14,6 +15,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+private slots:
+    void on_ExecutarConversao_clicked();
 
 private:
     Ui::MainWindow *ui;
