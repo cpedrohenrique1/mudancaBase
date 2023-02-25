@@ -19,7 +19,7 @@ void MainWindow::on_ExecutarConversao_clicked()
 {
     try{
         MudarBase base;
-        Pilha pilha(100);
+        Pilha pilha(6);
         QString saida = "";
         switch (ui->InputBase->currentText().toInt()){
         case 2:
@@ -37,27 +37,28 @@ void MainWindow::on_ExecutarConversao_clicked()
         case 16:
             base.converterHexa(ui->InputNumero->text().toInt(), pilha);
             for (int i = pilha.getTopo(); i > -1; i--){
-                switch(pilha.desempilhar()){
+                int desempilha = pilha.desempilhar();
+                switch(desempilha){
                 case 'A':
-                    saida+= 'A';
+                    saida += 'A';
                     break;
                 case 'B':
-                    saida+= 'B';
+                    saida += 'B';
                     break;
                 case 'C':
-                    saida+= 'C';
+                    saida += 'C';
                     break;
                 case 'D':
-                    saida+= 'D';
+                    saida += 'D';
                     break;
                 case 'E':
-                    saida+= 'E';
+                    saida += 'E';
                     break;
                 case 'F':
-                    saida+= 'F';
+                    saida += 'F';
                     break;
                 default:
-                    saida += QString::number(pilha.desempilhar());
+                    saida += QString::number(desempilha);
                 }
             }
             break;

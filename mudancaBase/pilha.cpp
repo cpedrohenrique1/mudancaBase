@@ -25,10 +25,6 @@ bool Pilha::pilhaVazia()const{
     return (topo==-1);
 }
 
-bool Pilha::pilhaCheia()const{
-    return (topo == tamanho-1);
-}
-
 Pilha::~Pilha(){
     if (vet){
         delete[] vet;

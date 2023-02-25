@@ -14,7 +14,6 @@ namespace Pedro{
         Pilha(int tamanho);
         ~Pilha();
         bool pilhaVazia()const;
-        bool pilhaCheia()const;
         void empilhar(int);
         int desempilhar();
         int getTopo()const;
