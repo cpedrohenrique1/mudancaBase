@@ -22,5 +22,4 @@ QString MudarBase::calcularMudancaBase(){
         resultado += vetor[p.desempilhar()];
     }
     return resultado;
-    throw QString("nao foi possivel calcular mudanca de base");
 }
