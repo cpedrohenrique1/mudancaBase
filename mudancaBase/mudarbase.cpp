@@ -1,7 +1,7 @@
 #include "mudarbase.h"
 
 MudarBase::MudarBase(int numero, int base):
-    p(6),
+    p(10),
     numero(0),
     base(0)
 {
