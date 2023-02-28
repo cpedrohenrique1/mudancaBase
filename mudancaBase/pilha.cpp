@@ -33,7 +33,7 @@ Pilha::~Pilha(){
 }
 
 void Pilha::empilhar(int valor){
-    if (topo < tamanho){
+    if (!estaCheia()){
         topo++;
         vet[topo] = valor;
     }else{
@@ -41,10 +41,20 @@ void Pilha::empilhar(int valor){
     }
 }
 
-int Pilha::desempilhar(){
-    return vet[topo--];
+bool Pilha::estaCheia()const{
+    return (topo == (tamanho-1));
 }
 
-int Pilha::getTopo()const{
-    return topo;
+int Pilha::desempilhar(){
+    if (!pilhaVazia()){
+        return vet[topo--];
+    }
+    throw QString("Pilha ja esta vazia");
+}
+
+int Pilha::acessar()const{
+    if (pilhaVazia()){
+        throw QString("nao foi possivel acessar, pilha vazia");
+    }
+    return vet[topo];
 }

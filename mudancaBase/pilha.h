@@ -14,9 +14,10 @@ namespace Pedro{
         Pilha(int tamanho);
         ~Pilha();
         bool pilhaVazia()const;
+        bool estaCheia()const;
         void empilhar(int);
         int desempilhar();
-        int getTopo()const;
+        int acessar()const;
     };
 }
 

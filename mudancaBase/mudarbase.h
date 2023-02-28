@@ -5,11 +5,13 @@ using namespace Pedro;
 
 class MudarBase
 {
+private:
+    Pilha p;
+    int numero;
+    int base;
 public:
-    MudarBase();
-    void converterBinario(int, Pilha&);
-    void converterOctal(int, Pilha&);
-    void converterHexa(int, Pilha&);
+    MudarBase(int numero, int base);
+    QString calcularMudancaBase();
 };
 
 #endif // MUDARBASE_H

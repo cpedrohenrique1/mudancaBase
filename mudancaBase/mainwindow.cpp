@@ -24,19 +24,19 @@ void MainWindow::on_ExecutarConversao_clicked()
         switch (ui->InputBase->currentText().toInt()){
         case 2:
             base.converterBinario(ui->InputNumero->text().toInt(), pilha);
-            for (int i = pilha.getTopo(); i > -1; i--){
+            for (int i = pilha.acessar(); i > -1; i--){
                 saida += QString::number(pilha.desempilhar());
             }
             break;
         case 8:
             base.converterOctal(ui->InputNumero->text().toInt(), pilha);
-            for (int i = pilha.getTopo(); i > -1; i--){
+            for (int i = pilha.acessar(); i > -1; i--){
                 saida += QString::number(pilha.desempilhar());
             }
             break;
         case 16:
             base.converterHexa(ui->InputNumero->text().toInt(), pilha);
-            for (int i = pilha.getTopo(); i > -1; i--){
+            for (int i = pilha.acessar(); i > -1; i--){
                 int desempilha = pilha.desempilhar();
                 switch(desempilha){
                 case 'A':
