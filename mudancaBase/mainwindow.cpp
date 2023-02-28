@@ -18,52 +18,8 @@ MainWindow::~MainWindow()
 void MainWindow::on_ExecutarConversao_clicked()
 {
     try{
-        MudarBase base;
-        Pilha pilha(6);
-        QString saida = "";
-        switch (ui->InputBase->currentText().toInt()){
-        case 2:
-            base.converterBinario(ui->InputNumero->text().toInt(), pilha);
-            for (int i = pilha.acessar(); i > -1; i--){
-                saida += QString::number(pilha.desempilhar());
-            }
-            break;
-        case 8:
-            base.converterOctal(ui->InputNumero->text().toInt(), pilha);
-            for (int i = pilha.acessar(); i > -1; i--){
-                saida += QString::number(pilha.desempilhar());
-            }
-            break;
-        case 16:
-            base.converterHexa(ui->InputNumero->text().toInt(), pilha);
-            for (int i = pilha.acessar(); i > -1; i--){
-                int desempilha = pilha.desempilhar();
-                switch(desempilha){
-                case 'A':
-                    saida += 'A';
-                    break;
-                case 'B':
-                    saida += 'B';
-                    break;
-                case 'C':
-                    saida += 'C';
-                    break;
-                case 'D':
-                    saida += 'D';
-                    break;
-                case 'E':
-                    saida += 'E';
-                    break;
-                case 'F':
-                    saida += 'F';
-                    break;
-                default:
-                    saida += QString::number(desempilha);
-                }
-            }
-            break;
-        }
-        ui->ImprimirResultado->setText(saida);
+        MudarBase base(ui->InputNumero->text().toInt(), ui->InputBase->currentText().toInt());
+        ui->ImprimirResultado->setText(base.calcularMudancaBase());
     }catch(QString &erro){
         QMessageBox::critical(this, "Erro ", erro);
     }

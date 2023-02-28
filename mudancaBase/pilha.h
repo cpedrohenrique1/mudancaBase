@@ -11,10 +11,10 @@ namespace Pedro{
         int topo;
     public:
         Pilha();
-        Pilha(int tamanho);
+        Pilha(int);
         ~Pilha();
         bool pilhaVazia()const;
-        bool estaCheia()const;
+        bool pilhaCheia()const;
         void empilhar(int);
         int desempilhar();
         int acessar()const;

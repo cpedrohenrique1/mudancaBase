@@ -1,9 +1,7 @@
 #include "pilha.h"
 using namespace Pedro;
 
-Pilha::Pilha()
-{
-
+Pilha::Pilha(){
 }
 
 Pilha::Pilha(int tamanho):
@@ -25,31 +23,23 @@ bool Pilha::pilhaVazia()const{
     return (topo==-1);
 }
 
-Pilha::~Pilha(){
-    if (vet){
-        delete[] vet;
-        vet = nullptr;
-    }
-}
-
-void Pilha::empilhar(int valor){
-    if (!estaCheia()){
-        topo++;
-        vet[topo] = valor;
-    }else{
-        throw QString("Topo maior que o tamanho do vetor");
-    }
-}
-
-bool Pilha::estaCheia()const{
+bool Pilha::pilhaCheia()const{
     return (topo == (tamanho-1));
 }
 
-int Pilha::desempilhar(){
-    if (!pilhaVazia()){
-        return vet[topo--];
+void Pilha::empilhar(int valor){
+    if (pilhaCheia()){
+        throw QString("chegou ao topo da pilha");
     }
-    throw QString("Pilha ja esta vazia");
+    topo++;
+    vet[topo] = valor;
+}
+
+int Pilha::desempilhar(){
+    if (pilhaVazia()){
+        throw QString("Pilha ja esta vazia");
+    }
+    return vet[topo--];
 }
 
 int Pilha::acessar()const{
@@ -57,4 +47,11 @@ int Pilha::acessar()const{
         throw QString("nao foi possivel acessar, pilha vazia");
     }
     return vet[topo];
+}
+
+Pilha::~Pilha(){
+    if (vet){
+        delete[] vet;
+        vet = nullptr;
+    }
 }
