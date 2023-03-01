@@ -1,17 +1,16 @@
 #ifndef MUDARBASE_H
 #define MUDARBASE_H
 #include "pilha.h"
-using namespace Pedro;
 
+namespace Pedro{
 class MudarBase
 {
 private:
-    Pilha p;
     int numero;
     int base;
 public:
     MudarBase(int numero, int base);
-    QString calcularMudancaBase();
+    QString calcularMudancaBase()const;
 };
-
+}
 #endif // MUDARBASE_H

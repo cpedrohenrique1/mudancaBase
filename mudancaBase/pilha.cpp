@@ -1,9 +1,6 @@
 #include "pilha.h"
-using namespace Pedro;
 
-Pilha::Pilha(){
-}
-
+namespace Pedro{
 Pilha::Pilha(int tamanho):
     vet(0),
     tamanho(0),
@@ -54,4 +51,6 @@ Pilha::~Pilha(){
         delete[] vet;
         vet = nullptr;
     }
+}
+
 }

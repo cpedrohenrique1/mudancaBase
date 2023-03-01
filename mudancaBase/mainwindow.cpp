@@ -18,10 +18,9 @@ MainWindow::~MainWindow()
 void MainWindow::on_ExecutarConversao_clicked()
 {
     try{
-        MudarBase base(ui->InputNumero->text().toInt(), ui->InputBase->currentText().toInt());
+        Pedro::MudarBase base(ui->InputNumero->text().toInt(), ui->InputBase->currentText().toInt());
         ui->ImprimirResultado->setText(base.calcularMudancaBase());
     }catch(QString &erro){
         QMessageBox::critical(this, "Erro ", erro);
     }
 }
-

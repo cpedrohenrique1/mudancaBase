@@ -10,7 +10,6 @@ namespace Pedro{
         int tamanho;
         int topo;
     public:
-        Pilha();
         Pilha(int);
         ~Pilha();
         bool pilhaVazia()const;
